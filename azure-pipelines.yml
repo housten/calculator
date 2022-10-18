@@ -26,8 +26,9 @@ steps:
     targetType: 'inline'
     script: |
       Start-Process powershell -ArgumentList 'New-Item -ItemType SymbolicLink -Path ".\node" -Target "C:\agent\_work\_tool\node"' -Verb RunAs
-      
+      ls
       # New-Item -ItemType SymbolicLink -Path ".\node" -Target "C:\agent\_work\_tool\node"
+    workingDirectory: 'C:\agent\_work\1\s'
   displayName: 'create symlink'
 
 - script: |
