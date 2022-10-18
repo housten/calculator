@@ -18,6 +18,7 @@ steps:
   displayName: 'npm install'
   
 - script: |
+    New-Item -ItemType SymbolicLink -Path ".\node" -Target "C:\agent\_work\_tool\node"
     npm run build
   displayName: 'npm build'
 
