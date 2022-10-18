@@ -22,6 +22,7 @@ steps:
   displayName: 'npm build'
 
 - task: PowerShell@2
+  enabled: false
   inputs:
     targetType: 'inline'
     script: |
@@ -34,3 +35,4 @@ steps:
 - script: |
     npm test
   displayName: 'npm test'
+  enabled: false
