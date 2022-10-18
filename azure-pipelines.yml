@@ -18,9 +18,14 @@ steps:
   displayName: 'npm install'
   
 - script: |
-    New-Item -ItemType SymbolicLink -Path ".\node" -Target "C:\agent\_work\_tool\node"
     npm run build
   displayName: 'npm build'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'New-Item -ItemType SymbolicLink -Path ".\node" -Target "C:\agent\_work\_tool\node"'
+  displayName: 'create symlink'
 
 - script: |
     npm test
